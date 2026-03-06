@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP HACK & BET | Secure Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #0b1a2a, #000000);
+            background-size: 400% 400%;
+            animation: gradient 12s ease infinite;
+        }
+        @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        .telebirr-blue { background-color: #00ADEF; box-shadow: 0 4px 20px rgba(0, 173, 239, 0.5); }
+        .vip-gold-border { border: 2px solid #fbbf24; box-shadow: 0 0 30px rgba(251, 191, 36, 0.4); }
+        .hidden-screen { display: none !important; }
+        
+        #winner-toast {
+            position: fixed; bottom: 20px; left: 20px;
+            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px);
+            border: 1px solid #fbbf24; padding: 12px 24px; border-radius: 15px;
+            z-index: 100; transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(200%);
+        }
+    </style>
+</head>
+<body class="text-white font-sans overflow-x-hidden min-h-screen">
+
+    <div id="winner-toast" class="flex items-center gap-3">
+        <i class="fas fa-crown text-yellow-500"></i>
+        <span id="winner-text" class="text-sm font-bold tracking-tight"></span>
+    </div>
+
+    <div id="activation-screen" class="flex flex-col items-center justify-center p-6 min-h-screen">
+        
+        <div class="text-center mb-10">
+            <h1 class="text-6xl font-black text-yellow-500 italic tracking-tighter drop-shadow-lg">VIP<span class="text-white">ACCESS</span></h1>
+            <p class="text-cyan-400 font-bold tracking-[0.3em] text-[10px] uppercase mt-2">Verified Security Protocol v4.2</p>
+        </div>
+
+        <div class="bg-gray-900/90 backdrop-blur-xl vip-gold-border p-8 rounded-[2.5rem] max-w-md w-full relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">Payment Required</div>
+
+            <div class="space-y-6">
+                <div class="telebirr-blue p-5 rounded-2xl text-center">
+                    <p class="text-[10px] uppercase font-black opacity-70">Send 500 Birr to Telebirr</p>
+                    <p class="text-3xl font-black my-1 tracking-tighter">0961190332</p>
+                    <p class="text-[10px] font-bold opacity-80 italic">To receive your VIP Ticket & Password</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-4 top-4 text-gray-500 text-xs"></i>
+                        <input type="text" id="user-name" placeholder="Full Name" class="w-full bg-black/50 border border-gray-800 rounded-xl p-4 pl-10 outline-none focus:border-yellow-500 transition-all text-sm">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-phone absolute left-4 top-4 text-gray-500 text-xs"></i>
+                        <input type="tel" id="user-phone" placeholder="Phone Number" class="w-full bg-black/50 border border-gray-800 rounded-xl p-4 pl-10 outline-none focus:border-yellow-500 transition-all text-sm">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-lock absolute left-4 top-4 text-yellow-500 text-xs"></i>
+                        <input type="password" id="user-pass" placeholder="Enter VIP Password" class="w-full bg-black/50 border-2 border-yellow-500/20 rounded-xl p-4 pl-10 outline-none focus:border-yellow-500 transition-all text-sm font-mono tracking-widest">
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-4 rounded-xl text-[11px] text-gray-400 leading-relaxed border border-white/5">
+                    <i class="fas fa-info-circle mr-1 text-cyan-400"></i> First pay 500 Birr to 0961190332. Use the password provided in your SMS to unlock game hacks and tickets.
+                </div>
+
+                <button id="activate-btn" onclick="startActivation()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-black py-5 rounded-2xl text-lg transition-all active:scale-95 shadow-[0_10px_20px_rgba(251,191,36,0.3)] uppercase">
+                    Activate VIP Access
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard" class="hidden-screen">
+        <nav class="bg-black/60 backdrop-blur-md p-4 border-b border-yellow-500/20 flex justify-between items-center sticky top-0 z-50">
+            <h1 class="text-xl font-black text-yellow-500 italic">VIP<span class="text-white">PORTAL</span></h1>
+            <div class="flex items-center gap-4 bg-yellow-500/10 px-4 py-2 rounded-xl border border-yellow-500/30">
+                <div class="text-right">
+                    <p id="nav-name" class="text-[10px] font-bold uppercase text-gray-400"></p>
+                    <p class="text-green-400 font-black text-sm">1,000.00 ETB</p>
+                </div>
+            </div>
+        </nav>
+
+        <div class="p-6 max-w-4xl mx-auto space-y-6">
+            <div class="bg-cyan-500/10 border border-cyan-500/50 p-4 rounded-2xl flex items-center gap-4 animate-pulse">
+                <i class="fas fa-microchip text-cyan-400 text-2xl"></i>
+                <div>
+                    <h3 class="font-black text-cyan-400 text-xs uppercase italic">Hacks Verified</h3>
+                    <p class="text-[11px] text-gray-300">Live Prediction Engine Synced. Win probability: 99.8%</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-900 p-6 rounded-3xl border border-gray-800">
+                    <p class="text-[10px] text-yellow-500 font-bold mb-2">FIXED TICKET #1</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-bold">Chelsea vs Arsenal</span>
+                        <span class="bg-yellow-500 text-black px-2 py-0.5 rounded text-[10px] font-black">X (Draw)</span>
+                    </div>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-3xl border border-gray-800">
+                    <p class="text-[10px] text-yellow-500 font-bold mb-2">FIXED TICKET #2</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-bold">Real Madrid vs Barca</span>
+                        <span class="bg-yellow-500 text-black px-2 py-0.5 rounded text-[10px] font-black">1 (Home)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Winner Toast Logic
+        const winners = ["Abebe_251", "Sara_VIP", "User_992", "Dawit_Bet", "HackMaster"];
+        setInterval(() => {
+            const toast = document.getElementById('winner-toast');
+            const text = document.getElementById('winner-text');
+            const user = winners[Math.floor(Math.random() * winners.length)];
+            const amount = (Math.random() * 5000 + 1000).toFixed(2);
+            text.innerText = `${user} WON ${amount} ETB`;
+            toast.style.transform = "translateY(0)";
+            setTimeout(() => { toast.style.transform = "translateY(200%)"; }, 3500);
+        }, 7000);
+
+        function startActivation() {
+            const name = document.getElementById('user-name').value;
+            const phone = document.getElementById('user-phone').value;
+            const pass = document.getElementById('user-pass').value;
+            const btn = document.getElementById('activate-btn');
+
+            if (!name || !phone) {
+                alert("Please enter your Name and Phone Number first.");
+                return;
+            }
+
+            // Password Check (171817)
+            if (pass !== "171817") {
+                alert("Incorrect VIP Password! First pay 500 Birr to 0961190332 to receive your 6-digit access code.");
+                return;
+            }
+
+            // Success Flow
+            btn.innerHTML = '<i class="fas fa-sync fa-spin"></i> SECURING ACCESS...';
+            btn.classList.replace('bg-yellow-500', 'bg-green-500');
+            
+            setTimeout(() => {
+                alert("ACCESS GRANTED. Welcome to the VIP Portal, " + name + "!");
+                document.getElementById('activation-screen').classList.add('hidden-screen');
+                document.getElementById('dashboard').classList.remove('hidden-screen');
+                document.getElementById('nav-name').innerText = name;
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
